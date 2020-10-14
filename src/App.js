@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './styles/main.scss';
 
 const App = () => {
 	const [paragraphs, setParagraphs] = useState([]);
@@ -16,10 +17,12 @@ const App = () => {
 	}, [inputValue]);
 
 	return (
-		<div>
+		<div className="container">
 			<h1>Bacon Ipsum Generator</h1>
 			<p>{paragraphs}</p>
+			<label for="input">Choose Paragraphs</label>
 			<input
+				id="input"
 				type="number"
 				value={inputValue}
 				onChange={(e) => setInputValue(e.target.value)}
